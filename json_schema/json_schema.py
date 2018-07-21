@@ -123,9 +123,9 @@ def dumps(j, *args, **kwargs):
     return json.dumps(montador(data), *args, **kwargs)
 
 
-def match(j, schema):
+def match(j, schema, allow_unsafe=False):
     """Compara um json (j) com um schema (schema)."""
-    js = JsonSchema(schema)
+    js = JsonSchema(schema, allow_unsafe)
     return js == j
 
 
